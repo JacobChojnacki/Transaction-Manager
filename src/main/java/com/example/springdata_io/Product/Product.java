@@ -1,20 +1,23 @@
-package com.example.springdata_io;
+package com.example.springdata_io.Product;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.example.springdata_io.Order.Order;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String name;
     private float price;
     private boolean available;
+
+    @ManyToMany(mappedBy = "products")
+    private Set<Order> orders;
 
     public Product() {
     }
@@ -25,11 +28,11 @@ public class Product {
         this.available = available;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
