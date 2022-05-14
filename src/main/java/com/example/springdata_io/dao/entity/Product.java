@@ -1,6 +1,6 @@
-package com.example.springdata_io.Product;
+package com.example.springdata_io.dao.entity;
 
-import com.example.springdata_io.Order.Order;
+import com.example.springdata_io.dao.entity.Order;
 
 import javax.persistence.*;
 import java.util.Set;

@@ -1,11 +1,11 @@
 package com.example.springdata_io;
 
-import com.example.springdata_io.Customer.Customer;
-import com.example.springdata_io.Customer.CustomerRepository;
-import com.example.springdata_io.Order.Order;
-import com.example.springdata_io.Order.OrderRepository;
-import com.example.springdata_io.Product.Product;
-import com.example.springdata_io.Product.ProductRepository;
+import com.example.springdata_io.dao.entity.Customer;
+import com.example.springdata_io.dao.repository.CustomerRepository;
+import com.example.springdata_io.dao.entity.Order;
+import com.example.springdata_io.dao.repository.OrderRepository;
+import com.example.springdata_io.dao.entity.Product;
+import com.example.springdata_io.dao.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
