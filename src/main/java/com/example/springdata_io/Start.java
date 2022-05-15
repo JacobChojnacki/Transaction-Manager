@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Start {
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     @Autowired
     public Start(ProductRepository productRepository){
