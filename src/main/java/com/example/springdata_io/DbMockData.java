@@ -47,8 +47,8 @@ public class DbMockData {
         Order order = new Order(customer, products, LocalDateTime.now(), "in progress");
         Order order1 = new Order(customer1, Collections.singleton(product1), LocalDateTime.now(), "in progress");
 
-        User user = new User("customer", "customer", "ROLE_CUSTOMER");
-        User user1 = new User("admin", "admin", "ROLE_ADMIN");
+        User user = new User("user", "user1", "CUSTOMER");
+        User user1 = new User("admin", "admin1", "ADMIN");
         UserDtoBuilder userDtoBuilder = new UserDtoBuilder(user);
         UserDtoBuilder userDtoBuilder1 = new UserDtoBuilder(user1);
         UserDto userDto = userDtoBuilder.getUserDto();
