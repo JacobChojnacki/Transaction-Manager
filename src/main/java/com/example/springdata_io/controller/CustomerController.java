@@ -35,7 +35,7 @@ public class CustomerController {
         return customerService.addCustomer(customer);
     }
 
-    @PutMapping("customer")
+    @PutMapping("admin/customer")
     public Customer updateCustomer(@RequestBody Customer customer) {
         return customerService.addCustomer(customer);
     }

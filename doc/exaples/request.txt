@@ -1,0 +1,230 @@
+GET http://localhost:8080/api/customer/all
+[
+    {
+        "id": 1,
+        "name": "Jak Kowalski",
+        "address": "Wrocław"
+    }
+]
+
+GET http://localhost:8080/api/customer?index=1
+{
+    "id": 1,
+    "name": "Jak Kowalski",
+    "address": "Wrocław"
+}
+
+POST http://localhost:8080/api/admin/customer
+{
+    "id": 3,
+    "name": "Wojciech Stawolski",
+    "address": "Poznan"
+}
+
+PUT http://localhost:8080/api/admin/customer
+{
+    "id": 3,
+    "name": "Wojciech Stawolski",
+    "address": "Gorzów Wielkopolski"
+}
+PATCH http://localhost:8080/api/admin/customer?index=1
+(update w tle)
+
+GET http://localhost:8080/api/product/all
+[
+    {
+        "id": 1,
+        "name": "Korek",
+        "price": 2.55,
+        "available": true
+    },
+    {
+        "id": 2,
+        "name": "Rura",
+        "price": 5.0,
+        "available": true
+    },
+    {
+        "id": 3,
+        "name": "Mis",
+        "price": 19.99,
+        "available": true
+    },
+    {
+        "id": 4,
+        "name": "Lalka",
+        "price": 29.99,
+        "available": true
+    },
+    {
+        "id": 5,
+        "name": "Samochodzik",
+        "price": 19.99,
+        "available": false
+    },
+    {
+        "id": 6,
+        "name": "Hantel",
+        "price": 59.99,
+        "available": true
+    },
+    {
+        "id": 7,
+        "name": "Szafa",
+        "price": 250.0,
+        "available": false
+    }
+]
+
+GET http://localhost:8080/api/product?index=1
+{
+    "id": 1,
+    "name": "Korek",
+    "price": 2.55,
+    "available": true
+}
+
+POST http://localhost:8080/api/admin/product
+{
+    "id": 8,
+    "name": "Pralka",
+    "price": 399.99,
+    "available": false
+}
+
+PUT http://localhost:8080/api/admin/product
+{
+    "id": 9,
+    "name": "Pralka",
+    "price": 899.99,
+    "available": false
+}
+
+PATCH http://localhost:8080/api/admin/product?index=1
+(update w tle)
+
+GET http://localhost:8080/api/order/all
+[
+    {
+        "id": 1,
+        "customer": {
+            "id": 1,
+            "name": "Gorzów Wielkopolski",
+            "address": "Wrocław"
+        },
+        "products": [
+            {
+                "id": 1,
+                "name": "Pralka",
+                "price": 899.99,
+                "available": true
+            },
+            {
+                "id": 2,
+                "name": "Rura",
+                "price": 5.0,
+                "available": true
+            }
+        ],
+        "placeDate": "2022-05-15T02:22:06.621748",
+        "status": "in progress"
+    },
+    {
+        "id": 2,
+        "customer": {
+            "id": 2,
+            "name": "Jakub Chojnacki",
+            "address": "Jelenia Góra"
+        },
+        "products": [
+            {
+                "id": 2,
+                "name": "Rura",
+                "price": 5.0,
+                "available": true
+            }
+        ],
+        "placeDate": "2022-05-15T02:22:06.622749",
+        "status": "in progress"
+    }
+]
+
+GET http://localhost:8080/api/order?index=1
+{
+    "id": 1,
+    "customer": {
+        "id": 1,
+        "name": "Gorzów Wielkopolski",
+        "address": "Wrocław"
+    },
+    "products": [
+        {
+            "id": 1,
+            "name": "Pralka",
+            "price": 899.99,
+            "available": true
+        },
+        {
+            "id": 2,
+            "name": "Rura",
+            "price": 5.0,
+            "available": true
+        }
+    ],
+    "placeDate": "2022-05-15T02:22:06.621748",
+    "status": "in progress"
+}
+POST http://localhost:8080/api/order
+{
+    "id": 1,
+    "customer": {
+        "id": 1,
+        "name": "Gorzów Wielkopolski",
+        "address": "Wrocław"
+    },
+    "products": [
+        {
+            "id": 3,
+            "name": "Mis",
+            "price": 19.99,
+            "available": true
+        },
+        {
+            "id": 1,
+            "name": "Pralka",
+            "price": 899.99,
+            "available": true
+        }
+    ],
+    "placeDate": "2022-05-15T02:22:06.621748",
+    "status": "in progress"
+}
+
+PUT http://localhost:8080/api/admin/order
+{
+    "id": 1,
+    "customer": {
+        "id": 1,
+        "name": "Gorzów Wielkopolski",
+        "address": "Wrocław"
+    },
+    "products": [
+        {
+            "id": 6,
+            "name": "Hantel",
+            "price": 59.99,
+            "available": true
+        },
+        {
+            "id": 3,
+            "name": "Mis",
+            "price": 19.99,
+            "available": true
+        }
+    ],
+    "placeDate": "2022-05-15T02:22:06.621748",
+    "status": "in progress"
+}
+
+PATCH http://localhost:8080/api/admin/order?index=1
+(update w tle)
